@@ -37,8 +37,8 @@ public class main {
 		//Create a List of the square of all distinct numbers
 		System.out.println(methods.getListQuareDistinctNumbers(myNumberList));
 		
-		//Create a List of the square of all distinct numbers without distinct()
-		System.out.println(methods.getListQuareDistinctNumbers2(myNumberList));
+		//Create a Set of the square of all distinct numbers without distinct()
+		System.out.println(methods.getSetQuareDistinctNumbers(myNumberList));
 	}
 
 }

@@ -9,6 +9,7 @@ import java.util.stream.Stream;
 
 public class methods {
 	
+	
 	public static int getAmountEmpty(List<String> list){
 		
 		return
@@ -60,7 +61,7 @@ public class methods {
 	public static String addUppercaseandJoinComa(List<String> list){
 		return list.stream()
 				.map(i -> i.toUpperCase())
-				.collect(Collectors.joining(",","[", "]"));
+				.collect(Collectors.joining(",","¡", "!"));
 	}
 	
 	public static List<Integer> getListQuareDistinctNumbers(List<Integer> list){
@@ -71,7 +72,7 @@ public class methods {
 	}
 	
 	
-	public static Set<Integer> getListQuareDistinctNumbers2(List<Integer> list){
+	public static Set<Integer> getSetQuareDistinctNumbers(List<Integer> list){
 		Set<Integer> mySet = new HashSet<Integer>();
 		
 		return list.stream()
