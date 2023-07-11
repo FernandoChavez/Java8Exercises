@@ -18,8 +18,8 @@ public class methods {
 		LocalDate startDate, endDate;
 		LocalTime startTime, endTime;
 		
+		//Split each meeting and stored them in a listMeetings
 		List<String> listMeetings = Arrays.asList(S.split("\\R"));
-		System.out.println(listMeetings);
 		
 		List<String> dayNames = Arrays.asList("Mon", "Tue","Wed", "Thu", "Fri", "Sat", "Sun");
 		List<Integer> dayNumbers = Arrays.asList(3, 4, 5, 6, 7, 8, 9);
