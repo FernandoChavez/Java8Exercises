@@ -79,7 +79,6 @@ public class methods {
 		//Getting among rest minutes among meetings and getting longer time rest
 		for(int x = 1; x<finalList.size()-1;x=x+2) {	
 			duration = Duration.between(finalList.get(x), finalList.get(x+1));
-			System.out.println(duration.toMinutes());
 			if((int) duration.toMinutes()>maxMinutes) {
 				maxMinutes = (int) duration.toMinutes();
 			}
