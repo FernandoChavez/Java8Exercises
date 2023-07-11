@@ -49,7 +49,6 @@ public class methods {
 						day = dayNumbers.get(y)+1;
 						endTime= LocalTime.parse(listMeetings.get(x).replace("24:00", "00:00").substring(10,15));
 					}else {
-						day = dayNumbers.get(y);
 						endTime= LocalTime.parse(listMeetings.get(x).substring(10,15));
 					}
 					endDate=LocalDate.of(2023, 7, day);

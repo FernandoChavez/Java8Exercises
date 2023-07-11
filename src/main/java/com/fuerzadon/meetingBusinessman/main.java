@@ -28,7 +28,7 @@ public class main {
 				+ "Sat 01:00-23:00\n"
 				+ "Sun 01:00-21:00";
 		
-		System.out.println("Mayor lapso para descansar son: " + methods.solution(meetings2) + " minutos");
+		System.out.println("Mayor lapso para descansar son: " + methods.solution(meetings) + " minutos");
 	}
 
 }
