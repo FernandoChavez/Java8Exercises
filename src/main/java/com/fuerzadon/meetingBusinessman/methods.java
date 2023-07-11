@@ -13,11 +13,10 @@ public class methods {
 
 	public static int solution(String S) {			
 		int day, maxMinutes=0;
-		Duration duration;
-		LocalDateTime startDT, endDT;
-		LocalDate date, startDate, endDate;
+		Duration duration, firstDuration, lastDuration;
+		LocalDateTime startDT, endDT, startWeek = LocalDateTime.of(2023, 7, 3, 0, 0, 0), endWeek = LocalDateTime.of(2023, 7, 10, 0, 0, 0);
+		LocalDate startDate, endDate;
 		LocalTime startTime, endTime;
-		String updatedMeeting;	
 		
 		List<String> listMeetings = Arrays.asList(S.split("\\R"));
 		System.out.println(listMeetings);
@@ -57,7 +56,7 @@ public class methods {
 					endDT = LocalDateTime.of(endDate, endTime);
 					
 					
-					//adding LocalDateTimes in their respective dayList
+					//Adding LocalDateTimes in their respective dayList
 					dayLists.get(y).add(startDT);
 					dayLists.get(y).add(endDT);
 					break;
@@ -65,41 +64,32 @@ public class methods {
 				}
 			}					
 		}
-		/*
 		
-		for(List<LocalDateTime> list : dayLists) {
-			System.out.println(list);
-		}
-		*/
-		
+		//Adding every dayList in a finalList
 		for(List<LocalDateTime> list : dayLists) {
 			finalList.addAll(list);
 		}
 		
-		/*
-		System.out.println();
-		System.out.println();
-		System.out.println(finalList);
-		*/
-		
+		//Sorting finalList elements
 		Collections.sort(finalList); 
 		
+		//Getting rest minutes since Mon 00:00 to start of first meeting
+		firstDuration = Duration.between(startWeek, finalList.get(0));
+		maxMinutes = (int) firstDuration.toMinutes();
 		
-		System.out.println();
-		System.out.println();
-		System.out.println("Ahora ordenado");
-		for(LocalDateTime t : finalList) {
-			System.out.println(t);
-		}
-		
-		
-		for(int x = 1; x<finalList.size()-1;x=x+2) {
-			
+		//Getting among rest minutes among meetings and getting longer time rest
+		for(int x = 1; x<finalList.size()-1;x=x+2) {	
 			duration = Duration.between(finalList.get(x), finalList.get(x+1));
 			System.out.println(duration.toMinutes());
 			if((int) duration.toMinutes()>maxMinutes) {
 				maxMinutes = (int) duration.toMinutes();
 			}
+		}
+		
+		//Getting rest minutes since the end of the last meeting until sunday at 24:00/second monday at 00:00 and see if is the longer rest
+		lastDuration = Duration.between(finalList.get(finalList.size()-1), endWeek);
+		if((int) lastDuration.toMinutes() > maxMinutes) {
+			maxMinutes = (int) lastDuration.toMinutes();
 		}
 		
 		return maxMinutes;
