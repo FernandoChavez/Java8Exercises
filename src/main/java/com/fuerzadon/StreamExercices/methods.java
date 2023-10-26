@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -64,6 +65,8 @@ public class methods {
 				.collect(Collectors.joining(",","¡", "!"));
 	}
 	
+	
+	//DISTINCT
 	public static List<Integer> getListQuareDistinctNumbers(List<Integer> list){
 		return list.stream()
 				.distinct()
@@ -71,13 +74,28 @@ public class methods {
 				.collect(Collectors.toList());
 	}
 	
-	
+	//NO DISTINCT. BETTER SET
 	public static Set<Integer> getSetQuareDistinctNumbers(List<Integer> list){
 		Set<Integer> mySet = new HashSet<Integer>();
 		
 		return list.stream()
 				.map(i -> i*i)
 				.collect(Collectors.toSet());
+				
+	}
+	
+	public static Set<Integer> getSetDistinctNumbers(List<Integer> list){
+		return list.stream()
+				.collect(Collectors.toSet());
+				
+	}
+	
+	public static Set<Integer> getTreeSetDistinctNumbers(List<Integer> list){
+		
+		Set<Integer> ts = new TreeSet<>();
+		ts = list.stream()
+				.collect(Collectors.toSet());
+		return ts;
 				
 	}
 }

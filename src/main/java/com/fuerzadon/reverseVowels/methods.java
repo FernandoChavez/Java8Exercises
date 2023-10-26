@@ -5,13 +5,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class methods {
-
 	public String reverseVowel(String s) {
 		String myString = "";
 		Stack<Character> vowels = new Stack<Character>();
 		Stream<Character> myStream = s.chars().mapToObj(c -> (char)c);
 
-		
 		vowels = myStream
 		.filter(i -> isVowel(i))
 		.collect(Collectors.toCollection(Stack::new));
@@ -23,7 +21,6 @@ public class methods {
 				myString += vowels.pop();
 			}
 		}
-		
 		return myString;
 	}
 	

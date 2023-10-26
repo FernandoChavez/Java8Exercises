@@ -39,6 +39,12 @@ public class main {
 		
 		//Create a Set of the square of all distinct numbers without distinct()
 		System.out.println(methods.getSetQuareDistinctNumbers(myNumberList));
+		
+		//Create a Set of all distinct numbers without distinct()
+		System.out.println(methods.getSetDistinctNumbers(myNumberList));
+		
+		//Create a treeSet for getting all distinct numbers in ascending orders
+		System.out.println(methods.getTreeSetDistinctNumbers(myNumberList));
 	}
 
 }

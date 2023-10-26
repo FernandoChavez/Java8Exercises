@@ -45,16 +45,17 @@ public class methods {
 			.count();
 		*/
 		
-		List<Character> list = new ArrayList<>();
+		List<Character> list = new ArrayList<>();	
 		
 		for(char ch : word.toCharArray()) {
 			list.add(ch);
 		}
 		
-		return (int) list
-			.stream()
-			.filter(i -> i=='e')
-			.count();
+		return (int) list.stream()
+				.filter(i ->i=='e')
+				.count();
+		
+	
 	}
 	
 }
