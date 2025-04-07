@@ -9,7 +9,7 @@ public class IsPresent {
 		User user= new User("Fernando");
 		User user2=null;
 		
-		Optional<User> optUser = Optional.ofNullable(user2);
+		Optional<User> optUser = Optional.ofNullable(user);
 		
 		//A continuación vas a crear un Optional para un objeto User y vas a determinar si está presente.
 		if(optUser.isPresent()) {

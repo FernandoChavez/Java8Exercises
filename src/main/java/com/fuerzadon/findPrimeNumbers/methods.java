@@ -22,9 +22,9 @@ public class methods {
 		}
 		
 		int limitRange = number/2;
-		//List<Integer> range = IntStream.range(1, limitRange+1).boxed().collect(Collectors.toList());
-		List<Integer> range2 = IntStream.range(2, limitRange+1).boxed().toList();
-		return range2.stream()
+		List<Integer> range = IntStream.range(1, limitRange+1).boxed().collect(Collectors.toList());
+		//List<Integer> range2 = IntStream.range(2, limitRange+1).boxed().toList();
+		return range.stream()
 			.allMatch(n -> number%n != 0);
 	}
 	

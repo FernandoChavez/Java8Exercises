@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class methods {
 	
-	
+	//Counting Empty String
 	public static int getAmountEmpty(List<String> list){
 		
 		return
@@ -18,6 +18,7 @@ public class methods {
 			filter(i -> i.isEmpty())
 			.count();
 	}
+	
 	
 	public static int getAmountEmptyInStream(Stream<String> stream) {
 		
@@ -27,7 +28,7 @@ public class methods {
 			.count();
 	}
 	
-	
+	//Count String whose length is more than three
 	public static int getAmountStringGreaterThan3Letter(List<String> list) {
 		return
 			(int) list.stream()
@@ -36,6 +37,7 @@ public class methods {
 			
 	}
 	
+	//Count number of String which starts with an specifict letter
 	public static int getNumberOfStringStartedASpecifictLetter(List<String> list, String letter) {
 		
 		return (int) list
@@ -44,6 +46,7 @@ public class methods {
 				.count();
 	}
 	
+	//Remove all empty Strings from List
 	public static List<String> removeAllEmptyStrings(List<String> list) {
 		
 		return
@@ -52,6 +55,8 @@ public class methods {
 				.collect(Collectors.toList());
 	}
 	
+	
+	//Create a List with String more than 2 characters
 	public static List<String> getListStringWith2OrMoreChar(List<String> list){
 		
 		return list.stream()
@@ -59,6 +64,7 @@ public class methods {
 				.collect(Collectors.toList());
 	}
 	
+	//Convert String to uppercase and Join them with coma
 	public static String addUppercaseandJoinComa(List<String> list){
 		return list.stream()
 				.map(i -> i.toUpperCase())
@@ -67,6 +73,7 @@ public class methods {
 	
 	
 	//DISTINCT
+	//Create a List of the square of all distinct numbers
 	public static List<Integer> getListQuareDistinctNumbers(List<Integer> list){
 		return list.stream()
 				.distinct()
@@ -75,6 +82,7 @@ public class methods {
 	}
 	
 	//NO DISTINCT. BETTER SET
+	//Create a Set of the square of all distinct numbers without distinct()
 	public static Set<Integer> getSetQuareDistinctNumbers(List<Integer> list){
 		Set<Integer> mySet = new HashSet<Integer>();
 		
@@ -84,12 +92,14 @@ public class methods {
 				
 	}
 	
+	//Create a Set of all distinct numbers without distinct()
 	public static Set<Integer> getSetDistinctNumbers(List<Integer> list){
 		return list.stream()
 				.collect(Collectors.toSet());
 				
 	}
 	
+	//Create a treeSet for getting all distinct numbers in ascending orders
 	public static Set<Integer> getTreeSetDistinctNumbers(List<Integer> list){
 		
 		Set<Integer> ts = new TreeSet<>();
