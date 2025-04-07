@@ -14,8 +14,9 @@ public class methods {
 	public static int getAmountEmpty(List<String> list){
 		
 		return
-			(int) list.stream().
-			filter(i -> i.isEmpty())
+			(int) list.stream()
+			.filter(String::isEmpty)
+			//.filter(i -> i.isEmpty())
 			.count();
 	}
 	
@@ -24,7 +25,8 @@ public class methods {
 		
 		return 
 			(int) stream
-			.filter(i -> i.isEmpty())
+			.filter(String::isEmpty)
+			//.filter(i -> i.isEmpty())
 			.count();
 	}
 	
