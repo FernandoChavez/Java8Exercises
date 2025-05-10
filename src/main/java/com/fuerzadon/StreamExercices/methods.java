@@ -1,5 +1,6 @@
 package com.fuerzadon.StreamExercices;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -80,6 +81,15 @@ public class methods {
 		return list.stream()
 				.distinct()
 				.map(i -> i*i)
+				.collect(Collectors.toList());
+	}
+	
+	//Create a sorted list of all distinct numbers, receiving an array
+	public static List<Integer> getSortedlistFromArray(int array[]){
+		return Arrays.stream(array) 
+				.boxed()  //convert ints to integers
+				.distinct()
+				.sorted()
 				.collect(Collectors.toList());
 	}
 	

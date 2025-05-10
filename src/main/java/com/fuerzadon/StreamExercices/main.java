@@ -11,6 +11,7 @@ public class main {
 		List<String> myList = Arrays.asList("", "Hola", "Saludo", "", "Despedida", "Tu", "Sal", "El", "Tomate", "Sal" ,"Yo");
 		List<Integer> myNumberList = Arrays.asList(1, 6, 4, 7, 1, 9, 23, 6, 1, 1, 2, 8, 8);
 		Stream<String> myStream = myList.stream();
+		int array[] = {1, 6, 4, 7, 1, 9, 23, 6, 1, 1, 2, 8, 8};
 		
 		
 		//Counting Empty String
@@ -36,6 +37,9 @@ public class main {
 		
 		//Create a List of the square of all distinct numbers
 		System.out.println(methods.getListQuareDistinctNumbers(myNumberList));
+		
+		//Create a sorted list of all distinct numbers, receiving an array
+		System.out.println(methods.getSortedlistFromArray(array));
 		
 		//Create a Set of the square of all distinct numbers without distinct()
 		System.out.println(methods.getSetQuareDistinctNumbers(myNumberList));
